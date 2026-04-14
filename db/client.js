@@ -1,3 +1,11 @@
 import pg from "pg";
-const db = new pg.Client(process.env.DATABASE_URL);
+import 'dotenv/config';
+
+const db = new pg.Client({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'filez',
+  password: 'password', 
+});
+
 export default db;
